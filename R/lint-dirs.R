@@ -10,8 +10,8 @@
 #' @export
 lint_dir <- function(path = ".", recursive = FALSE, relative_path = TRUE,
                      ...) {
-  # Avoid global variable
   one_of <- NULL
+  # Avoid global variable
   pattern <- "(\\.([Rr](md|tex|nw|html|rst))$|^\\.Rprofile$))"
   read_settings(path)
   on.exit(clear_settings, add = TRUE)

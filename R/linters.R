@@ -1,13 +1,19 @@
-#' Linters
+#' Miscellaneous Linters
 #'
-#' @param source_file
+#' Additional linters
 #'
+#' @param source_file returned by \code{\link[lintr]{get_source_expressions}}
+#' @return An \code{lints} object, which is a list of \code{lint} objects.
+#' @name linters
+NULL
+
 #' @describeIn linters check that all left parentheses in a function call
-#' do not have spaces before them.
-#'
+#'    do not have spaces before them.
 #' @rdname linters
 #' @export
 function_left_parentheses_linter <- function(source_file) {
+  one_of <- NULL
+  space <- NULL
   lapply(ids_with_token(source_file, "'('"),
          function(id) {
 
@@ -45,3 +51,4 @@ function_left_parentheses_linter <- function(source_file) {
 
          })
 }
+
